@@ -200,7 +200,7 @@ export function LeadForm({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[500px] bg-white/95 backdrop-blur-sm border-0 shadow-2xl dark:bg-gray-800/95 dark:border-gray-700">
+      <DialogContent className="sm:max-w-[500px] bg-white/95 backdrop-blur-sm border-0 shadow-2xl dark:bg-gray-800/95 dark:border-gray-700 rounded-lg mx-2">
         <div
           style={{ width: "100%", height: "500px", position: "fixed" }}
           className="hidden md:block -z-10"
@@ -375,7 +375,7 @@ export function LeadForm({
                 </div>
               </div>
 
-              <div className="flex gap-3 pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <Button
                   type="button"
                   variant="outline"

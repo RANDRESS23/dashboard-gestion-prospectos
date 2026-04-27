@@ -79,22 +79,25 @@ function AppContent() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <GraduationCap className="w-6 h-6 text-white" />
+            <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <GraduationCap className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
               </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-                  Javeriana Lead & Events Manager
+              <div className="min-w-0 flex-1">
+                <h1 className="text-sm sm:text-xl font-bold text-gray-900 dark:text-white truncate">
+                  <span className="hidden sm:inline">
+                    Javeriana Lead & Events Manager
+                  </span>
+                  <span className="sm:hidden">Javeriana Lead</span>
                 </h1>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 hidden sm:block">
                   Descubre nuestra oferta académica
                 </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
-              <div className="text-right">
+            <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
+              <div className="text-right hidden sm:block">
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                   <span className="font-semibold text-blue-600 dark:text-blue-400">
                     {programas.length}
@@ -105,6 +108,16 @@ function AppContent() {
                   </span>{" "}
                   programas
                 </p>
+              </div>
+              <div className="sm:hidden text-xs text-gray-600 dark:text-gray-300">
+                <span className="font-semibold text-blue-600 dark:text-blue-400">
+                  {programas.length}
+                </span>
+                /
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  {allProgramas.length}
+                </span>{" "}
+                programas
               </div>
               <ThemeToggle />
             </div>

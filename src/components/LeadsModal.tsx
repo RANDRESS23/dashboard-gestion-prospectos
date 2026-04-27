@@ -41,7 +41,7 @@ export function LeadsModal({ isOpen, onClose, programa }: LeadsModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[600px] bg-white/95 backdrop-blur-sm border-0 shadow-2xl dark:bg-gray-800/95 dark:border-gray-700 max-h-[80vh] overflow-hidden">
+      <DialogContent className="sm:max-w-[600px] bg-white/95 backdrop-blur-sm border-0 shadow-2xl dark:bg-gray-800/95 dark:border-gray-700 max-h-[80vh] overflow-hidden rounded-lg mx-2">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent flex items-center gap-2">
             <Users className="w-6 h-6 text-blue-600" />
