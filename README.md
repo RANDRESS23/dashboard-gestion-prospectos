@@ -1,75 +1,218 @@
-# React + TypeScript + Vite
+# 🎓 Dashboard de Gestión de Prospectos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación web moderna y elegante para la gestión de programas académicos y captación de prospectos, desarrollada con React, TypeScript y TailwindCSS.
 
-Currently, two official plugins are available:
+## 🌟 Características Principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **📋 Gestión de Programas**: Visualización y filtrado de programas académicos
+- **🎯 Captación de Prospectos**: Formulario de inscripción integrado
+- **🌗 Tema Claro/Oscuro**: Interfaz adaptable con toggle de tema
+- **📱 Diseño Responsivo**: Optimizado para todos los dispositivos
+- **✨ Animaciones Fluidas**: Experiencia de usuario moderna con Framer Motion
+- **🔍 Búsqueda y Filtrado**: Búsqueda en tiempo real y filtros por categoría
+- **🎨 UI Moderna**: Componentes con Radix UI y TailwindCSS
 
-## React Compiler
+## 🛠️ Stack Tecnológico
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### Frontend
 
-Note: This will impact Vite dev & build performances.
+- **React 19.2.5** - Biblioteca principal de UI
+- **TypeScript** - Tipado estático y desarrollo robusto
+- **Vite 8.0.10** - Herramienta de compilación rápida
+- **TailwindCSS 4.2.4** - Framework de CSS utility-first
+- **Framer Motion 12.38.0** - Animaciones y transiciones
 
-## Expanding the ESLint configuration
+### UI Components
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Radix UI** - Componentes accesibles y personalizables
+  - Dialog, Dropdown Menu, Label, Select, Switch, Toast
+- **Lucide React** - Iconos modernos y consistentes
+- **Sonner** - Sistema de notificaciones toast
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📋 Requisitos Previos
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Node.js** (v18 o superior)
+- **pnpm** (recomendado) o npm/yarn
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Instalación y Ejecución
+
+### 1. Clonar el Repositorio
+
+```bash
+git clone https://github.com/RANDRESS23/dashboard-gestion-prospectos.git
+cd dashboard-gestion-prospectos
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Instalar Dependencias
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Usando pnpm (recomendado)
+pnpm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# O usando npm
+npm install
+
+# O usando yarn
+yarn install
 ```
+
+### 3. Variables de Entorno
+
+El proyecto utiliza una API Mock para el desarrollo. La URL está configurada en:
+
+```typescript
+// src/services/api.ts
+const API_URL = "https://69ee25d89163f839f8928c6d.mockapi.io/api/programas";
+```
+
+### 4. Ejecutar en Modo Desarrollo
+
+```bash
+# Iniciar servidor de desarrollo
+pnpm dev
+
+# O con npm
+npm run dev
+```
+
+La aplicación estará disponible en `https://dashboard-gestion-prospectos.vercel.app/`
+
+### 5. Construcción para Producción
+
+```bash
+# Construir para producción
+pnpm build
+
+# Previsualizar la build de producción
+pnpm preview
+```
+
+## 📁 Estructura del Proyecto
+
+```
+dashboard-gestion-prospectos/
+├── public/                 # Archivos estáticos
+├── src/
+│   ├── components/        # Componentes React
+│   │   ├── ui/           # Componentes UI base
+│   │   ├── Aurora.tsx    # Componente de fondo animado
+│   │   ├── FilterControls.tsx
+│   │   ├── LeadsModal.tsx
+│   │   ├── LeadForm.tsx
+│   │   ├── ProgramCard.tsx
+│   │   ├── Particles.tsx
+│   │   └── ThemeToggle.tsx
+│   ├── contexts/          # Contextos de React
+│   │   ├── ThemeContext.tsx
+│   │   └── LeadsContext.tsx
+│   ├── hooks/             # Hooks personalizados
+│   │   ├── useLeads.ts
+│   │   └── useProgramas.ts
+│   ├── services/          # Servicios de API
+│   │   └── api.ts
+│   ├── types/             # Definiciones TypeScript
+│   │   └── index.ts
+│   │   └── leads.ts
+│   ├── lib/               # Utilidades
+│   ├── App.tsx           # Componente principal
+│   └── main.tsx          # Punto de entrada
+├── package.json
+├── vite.config.ts        # Configuración de Vite
+├── tsconfig.json         # Configuración TypeScript
+└── tailwind.config.js    # Configuración TailwindCSS
+```
+
+## 🔧 Configuración
+
+### API Endpoints
+
+La aplicación se conecta a los siguientes endpoints:
+
+- **GET /programas** - Obtener todos los programas
+- **GET /programas/:id** - Obtener un programa específico
+
+### Tipos de Datos
+
+#### Programa
+
+```typescript
+interface Programa {
+  id: string;
+  programa: string;
+  categoria: string;
+  modalidad: string;
+  duracion: string;
+  descripcion: string;
+  fechaInicio: string;
+}
+```
+
+#### Lead (Prospecto)
+
+```typescript
+interface Lead {
+  id: string;
+  nombre: string;
+  email: string;
+  telefono?: string;
+  programaInteres: string;
+  fechaRegistro: string;
+}
+```
+
+## 🎨 Características de UI/UX
+
+### Componentes Principales
+
+- **ProgramCard**: Tarjetas interactivas para mostrar programas
+- **LeadForm**: Formulario modal de inscripción
+- **FilterControls**: Controles de búsqueda y filtrado
+- **ThemeToggle**: Switch para cambiar entre temas claro/oscuro
+
+### Animaciones y Efectos
+
+- **Aurora Background**: Fondo animado con efectos de aurora boreal
+- **Transiciones suaves**: Animaciones de entrada/salida con Framer Motion
+- **Micro-interacciones**: Estados hover y feedback visual
+- **Notificaciones Toast**: Sistema de alertas no intrusivo
+
+### Diseño Responsivo
+
+- **Mobile-first**: Diseño optimizado para móviles
+- **Breakpoints adaptativos**: Tablets, desktop y pantallas grandes
+- **Navegación táctil**: Optimizado para interacción táctil
+
+## 🔍 Funcionalidades
+
+### Gestión de Programas
+
+- Listado completo de programas académicos
+- Filtrado por categoría
+- Búsqueda en tiempo real
+- Vista detallada de cada programa
+
+### Captación de Prospectos
+
+- Formulario de inscripción con validación
+- Selección de programa de interés
+- Almacenamiento local de leads
+- Confirmación visual de registro
+
+### Personalización
+
+- Toggle de tema claro/oscuro
+- Preferencias guardadas localmente
+- Interfaz adaptativa al tema del sistema
+
+## 🧪 Desarrollo
+
+### Scripts Disponibles
+
+```bash
+pnpm dev          # Servidor de desarrollo
+pnpm build        # Build de producción
+pnpm preview      # Previsualizar build
+pnpm lint         # Ejecutar ESLint
+```
+
+**Desarrollado con ❤️ usando React, TypeScript y TailwindCSS**
