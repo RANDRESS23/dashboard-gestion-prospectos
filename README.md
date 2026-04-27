@@ -2,6 +2,10 @@
 
 Una aplicación web moderna y elegante para la gestión de programas académicos y captación de prospectos, desarrollada con React, TypeScript y TailwindCSS.
 
+<img width="1920" height="1440" alt="image" src="https://github.com/user-attachments/assets/ee2b0b88-97f0-415f-bfe7-61fedcc4ac04" />
+
+
+
 ## 🌟 Características Principales
 
 - **📋 Gestión de Programas**: Visualización y filtrado de programas académicos
